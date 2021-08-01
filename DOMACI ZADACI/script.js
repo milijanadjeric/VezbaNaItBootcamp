@@ -4,28 +4,39 @@ let string2 = 'neki drugi string koji je i duzi string'
 let string3 = 'neki treci string koji je dugacak'
 let string4 = 'neki cetvrti'
 
+let maxString
+let minString
 
-// 1. Proveriti koji je string najduzi i ispisati samo njega
+// // 1. Proveriti koji je string najduzi i ispisati samo njega
 
-console.log (string1.length, string2.length, string3.length, string4.length)
-
-let najduziString = string2
-console.log (najduziString)
-
-
+if (string1.length > string2.length && string1.length > string3.length && string1.length > string4.length) {
+    maxString = string1
+} else if (string2.length > string1.length && string2.length > string3.length && string2.length > string4.length) {
+    maxString = string2
+} else if (string3.length > string1.length && string3.length > string2.length && string3.length > string4.length) {
+    maxString = string3
+}
+  else {
+    maxString = string4
+}
+console.log (maxString)
 
 // 2. Ispisati najkraci string koji sadrzi rec string 
 
-console.log (string1.includes("string"), string2.includes("string"), string3.includes("string"), string4.includes("string"))
+if (string4.length < string3.length && string4.length < string2.length && string4.length < string1.length && string4.includes('string')) {
+    minString = string4
+} else if (string3.length < string2.length && string3.length < string1.length && string3.length < string4.length && string3.includes('string')) {
+    minString = string3
+} else if (string2.length < string1.length && string2.length < string3.length && string2.length < string4.length && string2.includes('string')) {
+    minString = string2
+}
+  else {  
+    minString = string1
+}
+console.log(minString)
 
-let najkraciString = string1
-console.log (najkraciString)
 
-
-//3. sastaviti sve stringove bez prve reci "neki" osim ako string sadrzi deo recenice "string koji je", takve stringove izostaviti
-
-console.log (string1.slice(5) + ' ' + string4.slice(5))
-
+// //3. sastaviti sve stringove bez prve reci "neki" osim ako string sadrzi deo recenice "string koji je", takve stringove izostaviti
 
 
 //  4. Na osnovu kolicine i cene artikla ispisati ukupnu cenu
@@ -41,7 +52,7 @@ console.log (ukupnaCena)
 
 
 
-// Dopuniti 4. zadatak sa casa kolicinom novca, i ispisati racun (ako nema dovoljno novca ispisati poruku)
+// // Dopuniti 4. zadatak sa casa kolicinom novca, i ispisati racun (ako nema dovoljno novca ispisati poruku)
 
 let novac = 50
 let racun = novac - ukupnaCena
